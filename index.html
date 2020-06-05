@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API STAR WARS</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <div class="cont-fondo d-flex flex-column justify-content-center align-items-center ">
+                    <img src="assets/images/logo.png" alt="Star Wars" class="img-fluid">
+                    <form class="m-5">
+                        <select name="star" id="star" class="bg-info text-white">
+                            <option value="opcion" id="opcion">SELECCIONA UNA OPCIÓN</option>
+                              <option value="personaje1" id="opPersonaje">PERSONAJE</option>
+                              <option value="planeta1" id="opPlaneta">PLANETA</option>
+                              <option value="especie1" id="opEspecie">ESPECIE</option>
+                        </select>
+                        <button type="button" class="btn btn-outline-info ml-3 " id="btnBuscar">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-0 m-auto">
+                <div id="info-wars" class="m-auto"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/api.js"></script>
+
+</html>
