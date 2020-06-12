@@ -9,3 +9,8 @@
 .col-6 img.poster {
     width: 40%!important;
 }
+
+.line {
+    height: 20px;
+    background-color: brown;
+}

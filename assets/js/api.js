@@ -24,12 +24,11 @@ btnBuscar.addEventListener('click', () => {
     fetch(`https://swapi.dev/api/${valor}`)
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
+            //console.log(data);
             let dataDatos = data.next; //Dato campo seleccionado
             let dataInfo = data.results; // muestra los datos del campo seleecionado anterior
             datos(dataDatos, dataInfo);
-
-            // console.log(dataDatos);
+            //console.log(dataDatos);
             //console.log(dataInfo);
 
         })
@@ -43,8 +42,8 @@ btnBuscar.addEventListener('click', () => {
 
 
 const datos = (dataDatos, dataInfo) => {
-    console.log(dataDatos);
-    console.log(dataInfo);
+    // console.log(dataDatos);
+    // console.log(dataInfo);
 
     if (dataDatos == "http://swapi.dev/api/people/?page=2") {
         //console.log('personajes');
@@ -53,7 +52,7 @@ const datos = (dataDatos, dataInfo) => {
             //console.log(dataDatos[i]);
 
             document.getElementById("info-wars").innerHTML += `
-                
+            <div class="line"></div>
                     <div class="row m-0 p-4">
                         <div class="col-6 text-center">
                             <img src="assets/images/personaje.jpg" alt="" class="img-fluid poster">
@@ -67,13 +66,73 @@ const datos = (dataDatos, dataInfo) => {
                             <p class="font-weight-normal"><strong>Peso:</strong> ${dataInfo[i].mass}</p>                   
                         </div>
                     </div>
-                    <div class="row m-0 p-4">
-                    <div class="col-12 text-center" >
-                       <p>${dataInfo[i].films}</p> </br>
-                    </div>
-                </div>
-
                     `;
+            let array = dataInfo[i].films;
+            //console.log(array);
+
+            array.forEach(function(indice, valor) {
+                console.log("En el índice " + indice + " hay este valor: " + valor);
+                if (indice == "http://swapi.dev/api/films/1/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen1.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>             
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/2/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen2.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/3/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen3.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/4/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen4.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/5/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen5.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/6/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen6.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+            });
 
         }
 
@@ -81,9 +140,11 @@ const datos = (dataDatos, dataInfo) => {
     } else if (dataDatos == "http://swapi.dev/api/planets/?page=2") {
         //console.log('planetas');
         document.getElementById('info-wars').innerHTML = '';
+
         for (let i = 0; i < dataInfo.length; i++) {
             //console.log(dataDatos[i]);
             document.getElementById("info-wars").innerHTML += `
+            <div class="line"></div>
             <div class="row m-0 p-4">
                 <div class="col-6 text-center" >
                     <img src="assets/images/planeta.jpg"" alt="" class="img-fluid poster">
@@ -97,18 +158,82 @@ const datos = (dataDatos, dataInfo) => {
                     
                 </div>
             </div>
-            <div class="row m-0 p-4">
-                <div class="col-12 text-center" >
-                   <p>${dataInfo[i].films}</p> </br>
-                </div>
-            </div>
+            
             `;
+            let array = dataInfo[i].films;
+            //console.log(array);
+
+            array.forEach(function(indice, valor) {
+                //console.log("En el índice " + indice + " hay este valor: " + valor);
+                if (indice == "http://swapi.dev/api/films/1/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen1.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>             
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/2/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen2.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/3/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen3.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/4/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen4.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/5/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen5.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/6/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen6.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+            });
         }
     } else if (dataDatos == "http://swapi.dev/api/species/?page=2") {
         //console.log('especies');
         for (let i = 0; i < dataInfo.length; i++) {
+            // console.log(dataInfo[i].films);
             //console.log(dataDatos[i]);
             document.getElementById("info-wars").innerHTML += `
+            <div class="line"></div>
             <div class="row m-0 p-4">
                 <div class="col-6 text-center">
                     <img src="assets/images/especie.jpg" alt="" class="img-fluid poster">
@@ -122,13 +247,77 @@ const datos = (dataDatos, dataInfo) => {
                     <p class="font-weight-normal"><strong>Lenguaje:</strong> ${dataInfo[i].language}</p>
                 </div>
             </div>
-            <div class="row m-0 p-4">
-                <div class="col-12 text-center" >
-                <p>${dataInfo[i].films}</p> </br>
-                </div>
-            </div>
+
             `;
+
+            let array = dataInfo[i].films;
+            //console.log(array);
+
+            array.forEach(function(indice, valor) {
+                //console.log("En el índice " + indice + " hay este valor: " + valor);
+                if (indice == "http://swapi.dev/api/films/1/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen1.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>             
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/2/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen2.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/3/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen3.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/4/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen4.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/5/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center ">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen5.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+                if (indice == "http://swapi.dev/api/films/6/") {
+                    document.getElementById("info-wars").innerHTML += `
+                                <div class="row m-0 p-4 d-inline-block">
+                                    <div class="col-12 text-center">
+                                        <p>${indice}</p>
+                                        <img src="assets/images/imagen6.jpg" alt="" class="img-fluid poster">
+                                    </div>
+                                </div>               
+                `
+                }
+            });
         }
+
 
     }
 

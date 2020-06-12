@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
             <div class="col-12 p-0">
                 <div class="cont-fondo d-flex flex-column justify-content-center align-items-center ">
                     <img src="assets/images/logo.png" alt="Star Wars" class="img-fluid">
                     <form class="m-5">
                         <select name="star" id="star" class="bg-info text-white">
-                            <option value="opcion" id="opcion">SELECCIONA UNA OPCIÓN</option>
+                              <option value="opcion" id="opcion">SELECCIONA UNA OPCIÓN</option>
                               <option value="personaje1" id="opPersonaje">PERSONAJE</option>
                               <option value="planeta1" id="opPlaneta">PLANETA</option>
                               <option value="especie1" id="opEspecie">ESPECIE</option>
@@ -29,9 +29,14 @@
         </div>
         <div class="row">
             <div class="col-12 p-0 m-auto">
-                <div id="info-wars" class="m-auto"></div>
+                <div id="info-wars" class="m-auto text-center">
+                </div>
+
             </div>
         </div>
+        <footer class="bg-info p-5">
+            <p class="text-center text-dark">Creado por * Aura Melisa B.G *</p>
+        </footer>
     </div>
 </body>
 <script src="assets/js/jquery-3.4.1.min.js"></script>
